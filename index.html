@@ -7,6 +7,7 @@
     <title>Знакомство</title>
     <style>
         .btn {
+            margin: auto;
             color: rgb(15, 60, 45);
             background-color: aquamarine;
             cursor: pointer;
@@ -16,13 +17,17 @@
     </style>
 </head>
 <body>
+    <label for="name"> Введите свое имя
+        <input type="text" class="name" id="name" placeholder="Имя">
+    </label>
     <button class="btn" onclick="showMessage()">Давай познакомимся</button>
+    <div class="hello"></div>
     <script>
-        function showMessage() {
-            let name = prompt("Как тебя зовут?", "Имя");
-            // alert("Приятно познакомиться, " + name + "!");
-            alert(`Приятно познакомиться, ${name}!`);
-        }
+        let showMessage = () => {
+            const name = document.querySelector('.name').value;
+            const hello = document.querySelector('.hello');
+            hello.textContent = `Приятно познакомиться, ${name}!`;
+        };
     </script>
 </body>
 </html>
